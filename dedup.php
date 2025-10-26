@@ -15,12 +15,12 @@ class Dedup {
 
 		$this->args = $argv;
 		array_shift($this->args); // Remove script name
-		$this->leads_json_file_path = $this->args[0];
+		$this->leads_json_file_path = $this->args[0] ?? '';
 	}
 
 	public function print_help() {
 		echo PHP_EOL . 'Description: This script de-duplicates leads based on _id and email keys' . PHP_EOL;
-		echo 'Usage: ' . basename($GLOBALS['ARGV'][0]) . ' <leads json file path> ' . PHP_EOL;
+		echo 'Usage: ' . basename($GLOBALS['argv'][0]) . ' <leads json file path> ' . PHP_EOL;
 		echo '  --help, -h  Display this help message.' . PHP_EOL;
 		exit(0);
 	}
