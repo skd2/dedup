@@ -64,6 +64,7 @@ class Dedup {
 			[$temp_result_email, $final] = $this->dedup_helper('email', $email, $key, $element, $temp_result_email, $final);
 		}
 
+		$this->write_log('Script ended', $final);
 		return $final;
 	}
 
@@ -108,7 +109,4 @@ $dedup = new Dedup($argv);
 $dedup->prelim_checks();
 $final = $dedup->process_leads();
 print_r($final);
-#print count($final['leads']) . PHP_EOL;
-
-$this->write_log('Script ended');
 exit(0);
