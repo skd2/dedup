@@ -108,7 +108,7 @@ $dedup = new Dedup($argv);
 $dedup->prelim_checks();
 $final = $dedup->process_leads();
 print_r($final);
-print count($final['leads']) . PHP_EOL;
+#print count($final['leads']) . PHP_EOL;
 
-echo 'Script finished successfully.' . PHP_EOL;
+$this->write_log('Script ended');
 exit(0);
